@@ -613,41 +613,53 @@
                             <div class="title text-center">
                                 <h2 class="wow fadeInUp">Send Us Message</h2>
                             </div>
-                            <iframe height="700px" width="900px" src='https://taskbuzz.biginit.in/form/67ee7e721bc9f1743683186' title='UttamSkill Internship'></iframe>
-                            <!-- <form action="contact.php" id="contact-form" method="POST">
-                                <div class="row g-4">
-                                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="form-clt">
-                                            <input type="text" name="name" id="name" placeholder="Full Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="form-clt">
-                                            <input type="text" name="number" id="number" placeholder="Phone Number">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="form-clt">
-                                            <input type="text" name="email" id="email3" placeholder="Email Address">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 wow fadeInUp" data-wow-delay=".4s">
-                                        <div class="form-clt">
-                                            <input type="text" name="subject" id="subject" placeholder="subject">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".2s">
-                                        <div class="form-clt">
-                                            <textarea name="message" id="message" placeholder="Write message"></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-12 wow fadeInUp" data-wow-delay=".4s">
-                                        <button type="submit" class="theme-btn">
-                                            Send Us Message
-                                        </button>
+<form action="" id="contact-form" method="POST">
+                            <div class="row g-4">
+                                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="form-clt">
+                                        <label for="name">Name</label>
+                                        <input type="text" name="entry.96523224" id="name" placeholder="Full Name"
+                                            required>
                                     </div>
                                 </div>
-                            </form> -->
+                                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="form-clt">
+                                        <label for="number">Contact No</label>
+                                        <input type="text" name="entry.672936410" id="number"
+                                            placeholder="Contact Number" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="form-clt">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="entry.818545460" id="email"
+                                            placeholder="Email Address" required>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="form-clt">
+                                        <label for="course">Course</label>
+                                        <select name="entry.950236158" id="course" required>
+                                            <option value="" disabled selected>Select a Course</option>
+                                            <option value="Web Development">Web Development</option>
+                                            <option value="Machine Learning">Machine Learning</option>
+                                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                            <option value="Python">Python</option>
+                                            <option value="Mobile App Development">Mobile App Development</option>
+                                            <option value="C">C</option>
+                                            <option value="C++">C++</option>
+                                            <option value="SQL">SQL</option>
+                                            <option value="Data Science">Data Science</option>
+                                            <option value="Cyber Security">Cyber Security</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- Submit Button -->
+                                <div class="col-lg-12 wow fadeInUp text-center" data-wow-delay=".4s">
+                                    <button type="submit" class="theme-btn">Submit</button>
+                                </div>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -802,5 +814,37 @@
         <script src="assets/js/ajax-mail.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
+             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = document.getElementById('contact-form');
+    const formData = new FormData(form);
+
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSdHakAKXiU8sbzSIBH3ygfb7VEPdUHyzGNYc5i1cy8uglAF_w/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors' // Bypass CORS restrictions
+    })
+    .then(() => {
+        // Always assume success (Google Forms does not return reliable responses)
+        Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: 'Form submitted successfully!',
+        });
+        form.reset();
+    })
+    .catch(error => {
+        Swal.fire({
+            icon: 'error',
+            title: 'Error!',
+            text: 'An error occurred while submitting the form. Please try again.',
+        });
+        console.error(error);
+    });
+});
+</script>
     </body>
 </html>
