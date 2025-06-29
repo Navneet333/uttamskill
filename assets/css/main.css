@@ -3785,7 +3785,7 @@ p {
 }
 
 .feature-box-items {
-  padding: 70px 60px;
+  padding: 40px 40px;
   background-color: var(--white);
   border-right: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
@@ -4245,7 +4245,7 @@ p {
   position: absolute;
   left: 0;
   right: 0;
-  top: 60px;
+  top: 140px;
   z-index: -1;
 }
 @media (max-width: 1399px) {
@@ -7590,6 +7590,11 @@ p {
 }
 .brand-wrapper .brand-img {
   margin-top: 20px;
+}
+
+.brand-wrapper .brand-img .img-logo {
+  height: 100px;
+  width: 100px;
 }
 
 .global-partner-wrapper {
