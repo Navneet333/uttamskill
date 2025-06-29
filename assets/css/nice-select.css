@@ -8,7 +8,7 @@
   cursor: pointer;
   display: block;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   outline: none;
  padding: 14px 35px 14px 15px;
@@ -21,7 +21,7 @@
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
-  width: 160px;
+  width: 380px;
  }
   .nice-select:hover {
     border-color: #3f3877; }
