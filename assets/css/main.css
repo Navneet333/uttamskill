@@ -6289,6 +6289,27 @@ p {
   color: var(--theme-blue);
 }
 
+.list-items-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  padding: 0px 0px;
+  transition: all 0.4s ease-in-out;
+}
+@media (max-width: 1199px) {
+  .list-items-1 {
+    padding: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .list-items-1 {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}
+
 .team-wrapper {
   margin-top: 65px;
 }
