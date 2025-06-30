@@ -623,7 +623,7 @@
                             <div class="title text-center">
                                 <h2 class="wow fadeInUp">Send Us Message</h2>
                             </div>
-<form action="" id="contact-form" method="POST">
+                        <form  id="contact-form" >
                             <div class="row g-4">
                                 <div class="col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".2s">
                                     <div class="form-clt">
@@ -669,6 +669,18 @@
                                     <button type="submit" class="theme-btn">Submit</button>
                                 </div>
                             </div>
+
+                            <!-- Success Popup Modal -->
+                            <div id="successModal" class="modal-overlay">
+                                <div class="modal-content">
+                                    <span class="close-btn" id="closeModal">&times;</span>
+                                    <h3>Form Submitted Successfully</h3>
+                                    <p>Thank you for your submission. You can now proceed to payment.</p>
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoH_OtBZzM8B_cctF8d_Rr1-NLJbkin-bLKPJ_Ckja-o-VrA/viewform?usp=header" class="proceed-btn" target="_blank">Proceed to Payment</a>
+                                </div>
+                            </div>
+
+
                         </form>
                         </div>
                     </div>
@@ -837,24 +849,24 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
         body: formData,
         mode: 'no-cors' // Bypass CORS restrictions
     })
-    .then(() => {
-        // Always assume success (Google Forms does not return reliable responses)
-        Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: 'Form submitted successfully!',
-        });
-        form.reset();
-    })
-    .catch(error => {
-        Swal.fire({
-            icon: 'error',
-            title: 'Error!',
-            text: 'An error occurred while submitting the form. Please try again.',
-        });
-        console.error(error);
-    });
+    
 });
 </script>
+<script>
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  setTimeout(() => {
+    document.getElementById("successModal").style.display = "flex";
+    document.getElementById("contact-form").reset();
+  }, 500);
+});
+
+document.getElementById("closeModal").addEventListener("click", function () {
+  document.getElementById("successModal").style.display = "none";
+});
+</script>
+
+
     </body>
 </html>
