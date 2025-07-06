@@ -509,6 +509,7 @@ p {
   margin-bottom: 30px;
   margin-top: -5px;
 }
+
 @media (max-width: 767px) {
   .section-title {
     text-align: center;
@@ -5047,17 +5048,27 @@ p {
   margin-top: 37px;
   position: relative;
   z-index: 9;
+  text-align: center;
 }
+.about-wrapper .about-content p {
+    text-align: center;
+  }
 @media (max-width: 1199px) {
   .about-wrapper .about-content {
-    margin-top: 0;
+    margin-top: 90px;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .about-wrapper .about-content {
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
+    padding-top: 20px;
+  }
+  .about-wrapper {
+    align-content: center;
+    text-align: center;
+    align-self: center; 
   }
 }
 .about-wrapper .about-content p {
@@ -5068,6 +5079,7 @@ p {
 @media (max-width: 1199px) {
   .about-wrapper .about-content p {
     font-size: 16px;
+    text-align: center;
   }
 }
 @media (max-width: 767px) {
@@ -5088,6 +5100,9 @@ p {
     gap: 30px;
     margin-top: 30px;
     margin-bottom: 30px;
+  }
+    .about-wrapper .about-content .counter-box-items {
+    justify-content: center;
   }
 }
 @media (max-width: 767px) {
