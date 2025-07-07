@@ -514,6 +514,7 @@ p {
   .section-title {
     text-align: center;
     margin-bottom: 0;
+    margin-top: 50px;
   }
 }
 .section-title h6 {
@@ -10039,7 +10040,7 @@ p {
 }
 @media (max-width: 767px) {
   .courses-card-main-items .courses-card-items-hover {
-    padding-top: 70px;
+    padding-top: 40px;
   }
 }
 .courses-card-main-items .courses-card-items-hover .courses-content .post-cat {
